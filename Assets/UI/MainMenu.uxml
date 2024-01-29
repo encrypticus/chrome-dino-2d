@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template src="/Assets/UI/SoundControls.uxml" name="SoundControlsTemplate"/>
+    <Style src="project://database/Assets/UI/Common.uss"/>
+    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=d0c3b38586f2fb64993d292d0f249c3f&amp;type=3#MainMenu"/>
+    <ui:VisualElement name="Root" class="root">
+        <ui:VisualElement name="MainMenu" class="main-menu">
+            <ui:VisualElement name="MainControls" class="main-controls controls">
+                <ui:Button text="PLAY" parse-escape-sequences="true" display-tooltip-when-elided="true"
+                           name="ButtonPlay" class="button"/>
+                <ui:Button text="SETTINGS" parse-escape-sequences="true" display-tooltip-when-elided="true"
+                           name="ButtonSettings" tabindex="1" class="button"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="SettingsControls" class="controls">
+                <ui:Button text="BACK" parse-escape-sequences="true" display-tooltip-when-elided="true"
+                           name="ButtonBack" class="button"/>
+                <ui:Instance template="SoundControlsTemplate" name="SoundControlsInstance"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:ProgressBar value="22" title="my-progress" name="LoadingProgress"/>
+    </ui:VisualElement>
+</ui:UXML>

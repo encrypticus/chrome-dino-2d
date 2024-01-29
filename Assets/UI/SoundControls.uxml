@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="SoundControls">
+        <ui:VisualElement class="labels-wrapper typography" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="MUSIC" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MusicLabel" class="soundControlsLabel" />
+            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MusicValue" class="soundControlsLabel" />
+        </ui:VisualElement>
+        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="MusicSlider" class="soundSlider" />
+        <ui:VisualElement class="labels-wrapper typography" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="SOUNDS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundsLabel" class="soundControlsLabel" />
+            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundsValue" class="soundControlsLabel" />
+        </ui:VisualElement>
+        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="SoundsSlider" class="soundSlider" />
+    </ui:VisualElement>
+</ui:UXML>

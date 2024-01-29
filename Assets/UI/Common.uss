@@ -1,0 +1,102 @@
+.typography {
+    -unity-font: url('project://database/Assets/Fonts/PublicPixel.ttf?fileID=12800000&guid=ef7981222390a7348ab8b27cb0cd0836&type=3#PublicPixel');
+    -unity-font-definition: initial;
+    -unity-text-outline-color: black;
+    -unity-text-outline-width: 1px;
+    color: white;
+}
+
+.button {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(0, 161, 124);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    letter-spacing: 16px;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    height: 70px;
+    max-height: none;
+    -unity-text-align: middle-center;
+    max-width: 300px;
+    width: 80%;
+    font-size: 25px;
+    -unity-font-style: normal;
+    -unity-font: url('project://database/Assets/Fonts/PublicPixel.ttf?fileID=12800000&guid=ef7981222390a7348ab8b27cb0cd0836&type=3#PublicPixel');
+    -unity-font-definition: initial;
+    color: white;
+    -unity-text-outline-color: black;
+    -unity-text-outline-width: 1px;
+}
+
+.button:hover {
+    background-color: rgb(1, 126, 91);
+}
+
+.button:focus {
+    background-color: rgb(1, 98, 72);
+}
+
+#SoundControlsInstance {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#SoundControls {
+    flex-grow: initial;
+    width: 80%;
+}
+
+#SoundControls #unity-tracker {
+    height: 10px;
+    border-radius: 5px;
+    border-color: rgb(164, 164, 164);
+    background-color: rgb(161, 140, 0);
+}
+
+#SoundControls Slider:focus #unity-tracker {
+    background-color: rgb(134, 116, 3);
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+#SoundControls #unity-dragger {
+    background-color: rgb(4, 80, 62);
+    border-radius: 5px;
+    height: 30px;
+    width: 15px;
+    border-width: 1px;
+    border-color: rgb(164, 164, 164);
+    top: 10;
+}
+
+.soundSlider {
+    width: 100%;
+}
+
+.soundSlider Label {
+    display: none;
+}
+
+.soundControlsLabel {
+    font-size: 18px;
+    letter-spacing: 20px;
+}
+
+.labels-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.settings-wrapper {
+    width: 40%;
+}
