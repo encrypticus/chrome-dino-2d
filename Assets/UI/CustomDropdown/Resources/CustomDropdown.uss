@@ -1,0 +1,43 @@
+.custom-dropdown {
+  font-size: 25px;
+}
+
+.custom-dropdown .unity-base-field__input {
+  border-radius: 10px;
+  background-color: rgb(0, 161, 124);
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.custom-dropdown:focus .unity-base-field__input,
+.custom-dropdown:active .unity-base-field__input {
+  background-color: rgb(1, 126, 91);
+}
+
+.custom-dropdown:hover .unity-base-field__input {
+  background-color: rgb(1, 126, 91);
+}
+
+.unity-base-dropdown__container-inner {
+  background-color: rgb(0, 161, 124);
+  border-radius: 10px;
+}
+
+.unity-base-dropdown__item {
+  color: white;
+  border-radius: 10px;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.unity-base-dropdown__item:hover {
+  background-color: rgb(1, 126, 91);
+}
+
+.unity-base-dropdown__checkmark {
+  -unity-background-image-tint-color: white;
+}
+
+.unity-base-popup-field__arrow {
+  -unity-background-image-tint-color: rgb(255, 255, 255);
+}

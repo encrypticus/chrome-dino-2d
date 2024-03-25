@@ -5,7 +5,7 @@ namespace DinoGame {
   public class SettingsController : MonoBehaviour {
     private UIDocument _uiDocument;
     private VisualElement _root;
-
+    
     private Slider _musicSlider;
     private Label _musicValue;
     private Slider _soundsSlider;
@@ -14,11 +14,11 @@ namespace DinoGame {
     private void Awake() {
       _uiDocument = GetComponent<UIDocument>();
       _root = _uiDocument.rootVisualElement;
-
-      _musicSlider = _root.Q<Slider>("MusicSlider");
-      _musicValue = _root.Q<Label>("MusicValue");
-      _soundsSlider = _root.Q<Slider>("SoundsSlider");
-      _soundsValue = _root.Q<Label>("SoundsValue");
+      
+      _musicSlider = _root.Q<Slider>("musicSlider");
+      _musicValue = _root.Q<Label>("musicVolumeValueLabel");
+      _soundsSlider = _root.Q<Slider>("soundsSlider");
+      _soundsValue = _root.Q<Label>("soundsVolumeValueLabel");
     }
 
     private void Start() {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3550549566648025612}
   - component: {fileID: 1453550451750165794}
   - component: {fileID: -7124281299681696008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eagle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f499510a22e79c44887dcbf5b79382d4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.751
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0

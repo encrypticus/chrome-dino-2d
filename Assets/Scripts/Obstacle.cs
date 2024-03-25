@@ -1,6 +1,4 @@
-﻿
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DinoGame {
   public class Obstacle : MonoBehaviour {
@@ -14,9 +12,7 @@ namespace DinoGame {
       var position = Vector3.left * GameManager.Instance.gameSpeed * Time.deltaTime;
       transform.position += position;
 
-      if (transform.position.x < leftEdge) {
-        Destroy(gameObject);
-      }
+      if (transform.position.x < leftEdge) Destroy(gameObject);
     }
   }
 }

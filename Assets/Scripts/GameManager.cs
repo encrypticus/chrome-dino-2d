@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+using UI.CustomControls;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,17 +14,21 @@ namespace DinoGame {
     public float backgroundScrollSpeed { get; private set; }
     public AudioSource soundTrack;
     public AudioSource[] sounds;
+    public bool IsGameOver { get; private set; }
 
     private Player _player;
     private Spawner _spawner;
     private float _score;
+    private float _scoreAccum;
+    private float _gameSpeedAccum;
+    public bool IsPlayerLive => _player.IsAlive;
+
+    private bool _isRewardReceived;
 
     private UIDocument _uiDocument;
     private VisualElement _root;
-    private Label _currentScoreLabel;
-    private Label _hiScoreLabel;
-    private VisualElement _gameOverOverlay;
-    private Button _retryButton;
+    private GameOverOverlay _gameOverOverlay;
+    private Scoreboard _scoreboard;
 
     private void Awake() {
       if (Instance == null) {
@@ -34,10 +40,19 @@ namespace DinoGame {
 
       _uiDocument = GameObject.FindWithTag("GameUI").GetComponent<UIDocument>();
       _root = _uiDocument.rootVisualElement;
-      _currentScoreLabel = _root.Q<Label>("CurrentScoreLabel");
-      _hiScoreLabel = _root.Q<Label>("HiScoreLabel");
-      _gameOverOverlay = _root.Q<VisualElement>("GameOverOverlay");
-      _retryButton = _root.Q<Button>("RetryButton");
+      _gameOverOverlay = new GameOverOverlay(SettingsManager.Instance.GetLanguageDictionary());
+      _scoreboard = new Scoreboard(SettingsManager.Instance.GetLanguageDictionary());
+      _root.Add(_scoreboard);
+
+      if (SettingsManager.Instance.IsBrowser()) {
+        _gameOverOverlay.AddRewardButton();
+        _gameOverOverlay.rewardButton.button.clicked += () => ShowRewardAdv();
+        SettingsManager.Instance.OnGetLangFromYandex += langDict => {
+          _scoreboard.ChangeLanguage(langDict);
+          _gameOverOverlay.rewardButton.ChangeLanguage(langDict);
+          _gameOverOverlay.ChangeLanguage(langDict);
+        };
+      }
     }
 
     private void OnDestroy() {
@@ -49,17 +64,21 @@ namespace DinoGame {
     private void Start() {
       _player = FindObjectOfType<Player>();
       _spawner = FindObjectOfType<Spawner>();
-      _retryButton.clicked += () => NewGame();
+      _gameOverOverlay.OnRetryClicked += () => NewGame();
+
       NewGame();
     }
 
     private void Update() {
       gameSpeed += gameSpeedIncrease * Time.deltaTime;
+      _gameSpeedAccum += gameSpeedIncrease * Time.deltaTime;
       _score += gameSpeed * Time.deltaTime;
-      _currentScoreLabel.text = Mathf.FloorToInt(_score).ToString("D5");
+      _scoreAccum += _gameSpeedAccum * Time.deltaTime;
+      _scoreboard.UpdateCurrentScore(_score);
     }
 
     public void NewGame() {
+      enabled = true;
       Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
       GameObject[] playerDie = GameObject.FindGameObjectsWithTag("PlayerDie");
 
@@ -72,19 +91,40 @@ namespace DinoGame {
           Destroy(obj.gameObject);
         }
       }
-
-      gameSpeed = initialGameSpeed;
+      
       backgroundScrollSpeed = initialBackgroundScrollSpeed;
-      enabled = true;
-      _score = 0f;
+      
+      if (!_isRewardReceived) {
+        _score = 0f;
+        _scoreAccum = 0f;
+        gameSpeed = initialGameSpeed;
+        _gameSpeedAccum = initialGameSpeed;
+      }
+      else {
+        _score = _scoreAccum;
+        gameSpeed = _gameSpeedAccum;
+        _isRewardReceived = false;
+        _gameOverOverlay.AddRewardButton();
+      }
 
-      _player.gameObject.SetActive(true);
+      _player.IsAlive = true;
       _spawner.gameObject.SetActive(true);
-      _gameOverOverlay.style.display = DisplayStyle.None;
+
       SetSoundTrackVolume();
       SetSoundsVolume();
+      if (_gameOverOverlay != null) {
+        _gameOverOverlay.RemoveFromHierarchy();
+      }
+
+      IsGameOver = false;
+      AudioListener.pause = false;
 
       UpdateHiScore();
+    }
+
+    public void ReceiveReward() {
+      _isRewardReceived = true;
+      _gameOverOverlay.RemoveRewardButton();
     }
 
     public void SetSoundTrackVolume() {
@@ -97,17 +137,34 @@ namespace DinoGame {
       }
     }
 
+    [DllImport("__Internal")]
+    private static extern void ShowFullScreenAdv();
+
+    [DllImport("__Internal")]
+    private static extern void ShowRewardAdv();
+
+    [DllImport("__Internal")]
+    private static extern void SaveScoreOnLeaderboard(int score);
+
+    private void ShowAdvAndMute() {
+      AudioListener.pause = true;
+      ShowFullScreenAdv();
+    }
+
     public void GameOver() {
       gameSpeed = 0f;
       backgroundScrollSpeed = 0f;
-      enabled = false;
-
-      _player.gameObject.SetActive(false);
+      
       _spawner.gameObject.SetActive(false);
-      _gameOverOverlay.style.display = DisplayStyle.Flex;
-      _retryButton.Focus();
-
+      _root.Add(_gameOverOverlay);
+      _gameOverOverlay.SetFocus();
+      IsGameOver = true;
       UpdateHiScore();
+
+      if (SettingsManager.Instance.IsBrowser()) {
+        ShowAdvAndMute();
+      }
+      enabled = false;
     }
 
     private void UpdateHiScore() {
@@ -116,9 +173,12 @@ namespace DinoGame {
       if (_score > hiScore) {
         hiScore = _score;
         PlayerPrefs.SetFloat("hiScore", _score);
+        if (SettingsManager.Instance.IsBrowser()) {
+          SaveScoreOnLeaderboard((int)_score);
+        }
       }
 
-      _hiScoreLabel.text = Mathf.FloorToInt(hiScore).ToString("D5");
+      _scoreboard.UpdateHiScore(hiScore);
     }
   }
 }

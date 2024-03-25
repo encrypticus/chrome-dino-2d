@@ -1,0 +1,36 @@
+﻿{
+  "ru": {
+    "play": "ИГРАТЬ",
+    "settings": "НАСТРОЙКИ",
+    "quit": "ВЫХОД",
+    "back": "НАЗАД",
+    "music": "МУЗЫКА",
+    "sounds": "ЗВУКИ",
+    "yes": "ДА",
+    "no": "НЕТ",
+    "leaveGame": "ВЫЙТИ ИЗ ИГРЫ?",
+    "resume": "ИГРАТЬ",
+    "lang": "ЯЗЫК",
+    "hi": "РЕК",
+    "gameOver": "КОНЕЦ ИГРЫ",
+    "watchAds": "Чтобы продолжить с набранными очками \n и скоростью игры, посмотрите рекламу",
+    "watchLabel": "СМОТРЕТЬ"
+  },
+  "en": {
+    "play": "PLAY",
+    "settings": "SETTINGS",
+    "quit": "QUIT",
+    "back": "BACK",
+    "music": "MUSIC",
+    "sounds": "SOUNDS",
+    "yes": "YES",
+    "no": "NO",
+    "leaveGame": "LEAVE THE GAME?",
+    "resume": "RESUME",
+    "lang": "LANGUAGE",
+    "hi":  "HI",
+    "gameOver": "GAME OVER",
+    "watchAds": "To continue with points \n and speed of play, watch the advert",
+    "watchLabel": "WATCH"
+  }
+}

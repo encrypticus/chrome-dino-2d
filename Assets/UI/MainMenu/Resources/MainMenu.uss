@@ -1,0 +1,45 @@
+.root {
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  -unity-background-scale-mode: scale-and-crop;
+  background-image: url('project://database/Assets/Sprites/BG/Background6%202.jpg');
+  -unity-font: url('project://database/Assets/Fonts/PublicPixel.ttf');
+  -unity-font-definition: initial;
+  -unity-text-outline-color: black;
+  -unity-text-outline-width: 1px;
+  color: white;
+}
+
+.main-menu {
+  background-color: rgba(0, 0, 0, 0.64);
+  width: 50%;
+  height: 80%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.controls {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slider-wrapper {
+  width: 80%;
+}
+
+#musicSlider, #backButton {
+  margin-bottom: 20px;
+}

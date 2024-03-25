@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +12,7 @@ namespace DinoGame {
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public TextMeshProUGUI musicSliderValueText;
+
     public void PlayGame() {
       StartCoroutine(LoadGameAsync());
     }

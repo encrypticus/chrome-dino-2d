@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8806475008514381093}
   - component: {fileID: 950530499126256151}
   - component: {fileID: 3187702836325148747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cactus_Small_Single
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayerID: 1655053069
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: daade2cef46952c4582cb711068a0baf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c370c807fd7dba4abc49b867806caae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

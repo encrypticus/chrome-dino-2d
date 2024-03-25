@@ -1,0 +1,78 @@
+.typography {
+    -unity-font: url('project://database/Assets/Fonts/PublicPixel.ttf');
+    -unity-font-definition: initial;
+    -unity-text-outline-color: black;
+    -unity-text-outline-width: 1px;
+    color: white;
+    letter-spacing: 20px;
+}
+
+#SoundControlsInstance {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#SoundControls {
+    flex-grow: initial;
+    width: 80%;
+}
+
+#SoundControls #unity-tracker {
+    height: 10px;
+    border-radius: 5px;
+    border-color: rgb(164, 164, 164);
+    background-color: rgb(161, 140, 0);
+}
+
+#SoundControls Slider:focus #unity-tracker {
+    background-color: rgb(134, 116, 3);
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+#SoundControls #unity-dragger {
+    background-color: rgb(4, 80, 62);
+    border-radius: 5px;
+    height: 30px;
+    width: 15px;
+    border-width: 1px;
+    border-color: rgb(164, 164, 164);
+    top: 10;
+}
+
+.soundSlider {
+    width: 100%;
+}
+
+.soundSlider Label {
+    display: none;
+}
+
+.soundControlsLabel {
+    font-size: 18px;
+    letter-spacing: 20px;
+}
+
+.labels-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.settings-wrapper {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.translate-y {
+    translate: 0 300%;
+}
+
+.full-width {
+    width: 100%;
+}

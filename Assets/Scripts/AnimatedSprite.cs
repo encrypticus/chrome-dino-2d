@@ -21,7 +21,7 @@ namespace DinoGame {
       CancelInvoke();
     }
 
-    protected void Animate() {
+    protected virtual void Animate() {
       FrameRun++;
       if (FrameRun >= spritesForRun.Length) {
         FrameRun = 0;

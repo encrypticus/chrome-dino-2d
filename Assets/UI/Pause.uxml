@@ -1,21 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="SoundControlsTemplate" src="project://database/Assets/UI/SoundControls.uxml?fileID=9197481963319205126&amp;guid=f10f4dab68112554d8d7d4a4686c6d43&amp;type=3#SoundControls" />
-    <Style src="project://database/Assets/UI/Common.uss?fileID=7433441132597879392&amp;guid=b47b7e851a929314982890374aa19a5e&amp;type=3#Common" />
+    <Style src="project://database/Assets/UI/Resources/Common.uss?fileID=7433441132597879392&amp;guid=eab1b9dbf93a5374894486539c061f2f&amp;type=3#Common" />
     <Style src="project://database/Assets/UI/Pause.uss?fileID=7433441132597879392&amp;guid=ac29e3335dc3a0549a8d7ab9e3a80337&amp;type=3#Pause" />
-    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" focusable="false" name="PauseButton" class="pause-button" />
-    <ui:VisualElement name="Score" class="score root typography" style="margin-top: 20px; margin-right: 20px;">
-        <ui:Label tabindex="-1" text="HI" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreLabel" />
-        <ui:Label tabindex="-1" text="0000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HiScoreLabel" />
-        <ui:Label tabindex="-1" text="0000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CurrentScoreLabel" />
-    </ui:VisualElement>
+    <UI.CustomControls.PauseButton name="PauseButton" />
     <ui:VisualElement name="PauseOverlay" focusable="false" class="pause-overlay">
-        <ui:Button text="RESUME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResumeButton" class="button" />
-        <ui:VisualElement name="SettingsWrapper" class="settings-wrapper">
-            <ui:Instance template="SoundControlsTemplate" name="SoundControlsInstance" />
+        <ui:VisualElement name="Controls" style="flex-grow: 1;">
+            <UI.CustomControls.CustomButton text="RESUME" name="ResumeButton" />
+            <UI.CustomControls.CustomButton name="QuitButton" text="QUIT" />
+            <ui:VisualElement name="SettingsWrapper" class="settings-wrapper">
+                <ui:Instance template="SoundControlsTemplate" name="SoundControlsInstance" />
+            </ui:VisualElement>
         </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="GameOverOverlay" class="game-over-overlay" style="flex-grow: 1;">
-        <ui:Label tabindex="-1" text="GAME OVER&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameOverLabel" class="typography" />
-        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="RetryButton" />
     </ui:VisualElement>
 </ui:UXML>

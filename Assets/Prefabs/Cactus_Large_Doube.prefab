@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 890532664770444943}
   - component: {fileID: 6941362117912578934}
   - component: {fileID: 7154995994299949744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cactus_Large_Doube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -85,9 +85,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1655053069
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ba4f76d0a459e645bd1c17a16e553c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d95ff102a52b9042a6db4dcb84d8935, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

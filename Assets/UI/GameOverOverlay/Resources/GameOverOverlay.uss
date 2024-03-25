@@ -1,0 +1,12 @@
+.game-over-overlay {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
+
+.game-over-label {
+  font-size: 50px;
+  letter-spacing: 40px;
+  line-height: 0;
+}

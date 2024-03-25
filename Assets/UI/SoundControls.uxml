@@ -2,13 +2,13 @@
     <ui:VisualElement name="SoundControls">
         <ui:VisualElement class="labels-wrapper typography" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="MUSIC" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MusicLabel" class="soundControlsLabel" />
-            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MusicValue" class="soundControlsLabel" />
+            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="musicVolumeValueLabel" class="soundControlsLabel" />
         </ui:VisualElement>
-        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="MusicSlider" class="soundSlider" />
+        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="musicSlider" class="soundSlider" />
         <ui:VisualElement class="labels-wrapper typography" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="SOUNDS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundsLabel" class="soundControlsLabel" />
-            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundsValue" class="soundControlsLabel" />
+            <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="soundsVolumeValueLabel" class="soundControlsLabel" />
         </ui:VisualElement>
-        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="SoundsSlider" class="soundSlider" />
+        <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="1" name="soundsSlider" class="soundSlider" />
     </ui:VisualElement>
 </ui:UXML>

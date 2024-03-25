@@ -1,0 +1,11 @@
+.loading-progress {
+  width: 90%;
+}
+
+.loading-progress .unity-progress-bar__background {
+  background-color: rgba(0, 161, 124, 0.5);
+}
+
+.loading-progress .unity-progress-bar__progress {
+  background-color: rgb(0, 97, 75);
+}

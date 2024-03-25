@@ -1,0 +1,58 @@
+﻿#rewardButton {
+  border-radius: 10px;
+  width: 300px;
+  height: 64px;
+  translate: -10px 0;
+  padding: 10px;
+  background-color: rgb(0, 161, 124);
+  transition: background-color 0.3s;
+}
+
+#rewardButton:hover {
+  background-color: rgb(1, 126, 91);
+}
+
+#rewardButton:focus {
+  background-color: rgb(1, 98, 72);
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#icon {
+  width: 50%;
+  height: 100%;
+  background-image: url('project://database/Assets/Sprites/Camera.png');
+  -unity-background-scale-mode: scale-to-fit;
+}
+
+#rewardLabel {
+  font-size: 30px;
+  max-width: 50%;
+  -unity-text-align: middle-center;
+  -unity-text-outline-width: 1px;
+  -unity-text-outline-color: #373737;
+  color: white;
+  -unity-font-style: bold;
+}
+
+#buttonLabel {
+  color: white;
+  -unity-font-style: bold;
+  font-size: 20px;
+  -unity-font-style: bold;
+}
+
+.reward {
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.64);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  width: 80%;
+}

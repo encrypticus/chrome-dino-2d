@@ -5,7 +5,7 @@ namespace DinoGame {
     public Sprite spriteForJump;
     public CharacterController characterController;
 
-    private void Animate() {
+    protected override void Animate() {
       FrameRun++;
 
       if (FrameRun >= spritesForRun.Length) {

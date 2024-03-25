@@ -1,0 +1,30 @@
+.custom-slider {
+  width: 100%;
+}
+
+.custom-slider #unity-tracker {
+  height: 10px !important;
+  border-radius: 5px;
+  border-color: rgb(164, 164, 164);
+  background-color: rgb(161, 140, 0);
+}
+
+.custom-slider:focus #unity-tracker {
+  background-color: rgb(134, 116, 3);
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.custom-slider #unity-dragger {
+  background-color: rgb(4, 80, 62);
+  border-radius: 5px;
+  height: 30px;
+  width: 15px;
+  border-width: 1px;
+  border-color: rgb(164, 164, 164);
+  top: 10;
+}
+
+.custom-slider Label {
+  display: none;
+}

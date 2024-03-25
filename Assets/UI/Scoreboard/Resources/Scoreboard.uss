@@ -1,0 +1,15 @@
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: auto;
+  font-size: 40px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.score-label {
+  margin-left: 20px;
+}

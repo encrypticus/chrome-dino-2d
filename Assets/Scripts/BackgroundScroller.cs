@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DinoGame {
   public class BackgroundScroller : MonoBehaviour {
@@ -10,7 +9,8 @@ namespace DinoGame {
     }
 
     private void Update() {
-      MeshRenderer.material.mainTextureOffset += Vector2.right * GameManager.Instance.backgroundScrollSpeed * Time.deltaTime;
+      MeshRenderer.material.mainTextureOffset +=
+        Vector2.right * GameManager.Instance.backgroundScrollSpeed * Time.deltaTime;
     }
   }
 }

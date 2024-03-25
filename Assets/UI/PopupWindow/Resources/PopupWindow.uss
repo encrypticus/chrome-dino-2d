@@ -1,0 +1,22 @@
+.popup-window {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.64);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: translate 0.5s;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+}
